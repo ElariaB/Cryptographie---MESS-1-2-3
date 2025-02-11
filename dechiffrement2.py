@@ -7,7 +7,11 @@ def decalage_caractere_plus_present(phrase):
         else:
             occurrences[caractere] = 1
 
-    caractere_plus_present = max(occurrences, key=occurrences.get)
+    m = 0
+    for car in occurrences :
+        if occurrences[car] > m:
+            m = occurrences[car]
+            caractere_plus_present = car 
 
     print(" le plus présent :", caractere_plus_present)
     decalage = ord(' ') - ord(caractere_plus_present)
